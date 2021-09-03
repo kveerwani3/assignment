@@ -1,0 +1,107 @@
+Ques 1)
+
+import java.util.Scanner;
+public class Marks
+{
+    public static void main(String args[])
+    {
+        int markArray[] = new int[5];
+        int i;
+        float sum=0;
+        float average, percentage;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter marks of 5 Subjects : ");
+        for(i=0; i<5; i++)
+		{
+            markArray[i] = scan.nextInt();
+            sum = sum + markArray[i];
+        }
+		average = sum/5;
+        percentage = (sum/500) * 100;
+        System.out.print("average Marks = " +average);
+        System.out.print("\nPercentage = " +percentage+ "%");
+    }
+}
+
+Ques 2)
+
+public class Matrix
+{
+	public static void main(String args[])
+	{
+		int a[][]={{4,4,4,},{5,5,5},{3,3,3}};   
+		int b[][]={{9,9,9},{7,7,7},{2,2,2}};   
+		int c[][]=new int[3][3];  
+		for(int i=0;i<3;i++)
+		{   
+			for(int j=0;j<3;j++)
+			{   
+				c[i][j]=0;     
+				for(int k=0;k<3;k++)     
+				{     
+					c[i][j]+=a[i][k]*b[k][j];     
+				}
+				System.out.print(c[i][j]+" ");
+			}
+				System.out.println();
+		}   
+	}
+}
+
+Ques 3)
+
+import java.io.*;
+public static void main(String args[]) 
+{
+    String data = "Java is Object oriented. Java is platform independent.Java is simple.";
+    String word = "Java";
+    System.out.println(countOccurrences(data, word));
+}
+	Public class String
+	{
+		static int countOccurrences(String data, String word) 
+		{
+			String a[] = data.split(" ");
+			int count = 0;
+			for (int i = 0; i < a.length; i++) 
+			{
+				if (word.equals(a[i]))
+				count++;
+			} 
+			return count;
+		}
+	}
+	
+Ques 4)
+
+public class Descend
+	{    
+		public static void main(String[] args) 
+		{          
+			int [] arr = new int [] {2,4,6,9,5,3,1,0,7,8};     
+			int temp = 0;       
+			System.out.println("original array: ");    
+			for (int i = 0; i < arr.length; i++)
+			{     
+				System.out.print(arr[i] + " ");    
+			}     
+			for (int i = 0; i < arr.length; i++)
+			{     
+            for (int j = i+1; j < arr.length; j++) 
+			{     
+               if(arr[i] < arr[j]) 
+			   {    
+                   temp= arr[i];    
+                   arr[i] = arr[j];    
+                   arr[j] = temp;    
+               }     
+            }     
+			}       
+        System.out.println();        
+        System.out.println("descending order: ");    
+        for (int i = 0; i < arr.length; i++) 
+		{     
+            System.out.print(arr[i] + " ");    
+        }    
+    }    
+}  
