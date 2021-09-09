@@ -1,0 +1,55 @@
+1) In a String find and replace a word.
+
+  e.g Java is Object Oriented. Java is Programming Language.
+
+ Search for a word "Java"
+ Replace "Java" with "C++";
+
+ C++ is Object Oriented. C++ is Programming Language.
+
+
+public class Test
+{
+	public static void main(String[] args)
+	{
+		String str1 = "Java is Object Oriented. Java is Programming Language.";
+		String str2 = str1.replace("Java","C++");
+		System.out.println(str2);
+	}
+}
+
+
+2)In a given String count number of words, count numbers of number.
+
+  "12,RutherFord Building,Lake Street,Chichago-29"
+
+
+Hint: StreamTokenizer
+
+
+package demo;
+
+import java.io.FileReader;
+import java.io.StreamTokenizer;
+
+public class WAndNCount
+	{
+		public static void main(String[] args) throws Exception 
+		{
+			    int wordCount = 0, numberCount = 0;
+				StreamTokenizer sTokenizer = new StreamTokenizer(new FileReader("C:\\Projects\\Assignments\\src\\Assignment6\\File.txt"));
+				while (sTokenizer.nextToken() != StreamTokenizer.TT_EOF) 
+				{
+			      if (sTokenizer.ttype == StreamTokenizer.TT_WORD)
+			        wordCount++;
+			      else if (sTokenizer.ttype == StreamTokenizer.TT_NUMBER)
+			        numberCount++;
+			    }
+
+			    System.out.println("Number of words in file: " + wordCount);
+			    System.out.println("Number of numbers in file: " + numberCount);
+
+		}	  
+	}
+
+
