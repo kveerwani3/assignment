@@ -1,0 +1,60 @@
+Identify Entities and sub entities ,their attributes and methods in Student Management System. 
+
+1).Entity-User			
+Attributes-userId,userPassword,name{firstName,lastName}
+Sub-attributes-address,phoneNo{mobile,landline} 		
+Methods- getUserId,getUserPassword,getName{getFirstName,getLastName},getAddress,getPhoneNo{getlandline,getMobile},setUserId,setUserPassword,
+setName{setFirstName,setLastName},setAddress,setPhoneNo{setMobile,setLandline}
+
+2).Entity-Admin 			
+Attributes-adminId,name{firstName,lastName},address,phoneNo					
+Methods-getAdminId,getName{getFirstName,getLastName},getAddress,getPhoneno,setAdminId,setName{setFirstName,setLastName},setAddress,setPhoneno
+
+3).Entity-Student
+Attributes-regNo,name{firstName,lastName},address,phone						
+Methods- getRegNo,getName{getFirstName,getLastName},getAddress,getPhoneno,setRegNo,SetName{setFirstName,setLastName},setAddress,setPhoneno
+
+4).Entity-Faculty			
+Attributes-facultyId,name{firstName,lastName},address,phone
+Methods- getFacultyId,getName{getFirstName,getLastName},getAddress,getPhoneno,setFacultyId,setName{setFirstName,setLastName},setAddress,setPhoneno
+
+5).Entity-Graduate		
+Attributes-regNo,name{firstName,lastName},address,phoneNo
+Methods- getRegNo,getName{getFirstName,getLastName},getAddress,getPhoneno,setRegNo,SetName{setFirstName,setLastName},setAddress,setPhoneno
+
+6).Entity-PostGraduate		
+Attributes-regNo,name{firstName,lastName},address,phone
+Methods- getRegNo,getName{getFirstName,getLastName},getAddress,getPhoneno,setRegNo,SetName{setFirstName,setLastName},setAddress,setPhoneno
+
+7).Entity-Course			
+Attributes-courseId,courseName
+Methods-getCourseId,getCourseName,setCourseId,setCourseName
+
+8).Entity-Department		
+Attributes-deptId,deptName
+Methods-getDeptId,getDeptName,setDeptId,setDeptName
+
+The relationships:-
+
+Generalization- 
+Generalization is the process of extracting common properties from a set of entities and create a generalized entity from it. 
+It is a bottom-up approach.
+Example-  Here Student and Faculty can be generalized to a higher level entity called User.
+
+Specialization-
+In specialization, an entity is divided into sub-entities based on their characteristics. It is a top-down approach 
+Example- Here Student entity  can be specialized into Graduate and PostGraduate type entities.
+ 
+Composition- implies a relationship where the child cannot exist independent of the parent. 
+Example: Student (parent) and Graduate (child). Graduate class don't exist if Student class is removed.
+
+Aggregation- In aggregation, the relation between two entities is treated as a single entity. In aggregation, relationship with its corresponding entities is aggregated into a higher level entity.
+Example: Department entity offers the Course entity, it acts as a single entity in the relationship which is in a relationship with another entity Student.
+
+
+
+
+
+
+
+
