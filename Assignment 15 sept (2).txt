@@ -1,0 +1,36 @@
+Identify Custom exception handling classes for following systems
+
+   -Stock Management System
+   -Library Management System
+   -Inventory Management System
+
+Stock Management System
+>>UnauthorizedAccessException
+>>ServerDowntimeException
+>>InsufficientFundsException
+>>TradeExecutionException
+>>TradingAccountNotFoundException
+>>AccountReviewFailedException
+
+
+	
+Library Management System
+>UnauthorizedAccessException
+>>BookNotFoundException
+>>ServerDowntimeException
+>>OverDueException
+>>MaximumLimitReachedException
+>>BookRenewalException
+>>BookIssuerException
+>>DuplicateRecordFoundException
+
+
+Inventory Management System
+>>UnauthorizedAccessException
+>>OutOfStockException
+>>InvalidLotSelectionException
+>>InsufficientLotException
+>>MachineDownTimeException
+>>MatrialShortageException
+>>NoMoreOrdersException
+>>ServerDowntimeException

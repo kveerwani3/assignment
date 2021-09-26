@@ -1,0 +1,29 @@
+Identify 10 checked exception and 10 unchecked exception handling classes in JSE 8.0
+
+Example of Checked Exception:-
+	
+
+>> IOException
+>> FileNotFoundException
+>> InterruptedException
+>> RunnableException
+>> InvalidClassException 
+>> InvalidObjectException
+>> NotSerializableException
+>> OptionalDataException
+ 
+
+Example of Unchecked Exception:-
+
+
+>> ArrayIndexOutOfBoundException
+>> ClassCastException
+>> NullPointerException
+>> StringIndexOutOfBoundException
+>> IllegalArgumentException
+>> NumberFormateException
+>> StackOverFlow
+>> OutOfMemory
+>> NoClassDefFoundException
+>> ExceptionInInitialzer
+>> AssertionError
