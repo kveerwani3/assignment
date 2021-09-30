@@ -1,0 +1,161 @@
+1) Using TDD find fourth largest element of an array given size greater than 5.
+
+
+/Test 
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringTest {
+
+	//Test
+	public void test() 
+	{
+		Simple main = new Simple();
+		
+		String str = "Java is object oriented programming language, it is platform Independent language";
+		int a = 2;
+		
+		int actual = main.String(str);
+		assertEquals(a,actual);
+	}
+	
+}
+
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class sample
+{
+	public int String(String str)
+	{
+		int con =0;
+		if(str.equals(null))
+		{
+			throw new NullPointerException();
+		}
+		
+		
+		String [] arr = str.split(" ");
+		
+		Set s = new TreeSet();
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			 if(s.add(arr[i])==false)
+			 {
+				 con = con+1;
+			 }
+		}
+		
+           return count;
+	}
+}
+2) Using TDD count the number of duplicates elements in an array of type String of size 10.
+
+
+/ Test
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestArray {
+
+	//Test
+	public void test() 
+	{
+		
+		Simple S1 = new Simple();
+	   int[] array = {55,33,22,66,77};
+	   int a= 4;
+	   
+	   int actual = S1.ForthLargest(array);
+	   assertEquals(a, actual);
+	}
+
+}
+public class Simple
+{
+	public int ForthLargest(int[] arr)
+	{
+		int temp = 0;
+		if(arr.length < 5)
+		{
+			throw new RuntimeException();
+		}
+			
+		for(int i=0;i<arr.length;i++) 
+		{
+			for(int j=i+1;j<arr.length;j++) 
+			{
+				if(arr[i] > arr[j])
+				{
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j]= temp;
+				}
+			}
+		}
+		
+		return arr[3];
+		
+	}
+}
+
+3) Using TDD approach Count the number of prime numbers in given array.
+
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Test {
+
+	//Test
+	public void test()
+	{
+		Simple S1= new Simple();
+		
+		int [] arr = {6,4,3,2,5,7,9,8,1};
+		int a = 5;
+		
+		int actual = S1.Prime(arr);
+		assertEquals(a,actual);
+		
+	}
+
+}
+public class Simple
+{
+  public int Prime(int [] arr)
+  {
+	  int temp =0;
+	  int count =0;
+  
+	  if(arr.length < 5)
+	  {
+		  throw new RuntimeException();
+	  }
+	  for(int i=0;i<arr.length;i++) 
+	  {
+		  for(int j=2;j<arr[i];j++) 
+		  {
+			  if(arr[i]%j ==0) 
+			  {
+				  temp = temp+1;
+			  }
+		  }
+		  if(temp==0) 
+		  {
+			 count = count+1; 
+		  }
+		  
+		  temp =0;
+	  }
+	  return count;
+  }
+}
+
+
