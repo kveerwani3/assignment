@@ -10,7 +10,7 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Scanner;
 
-public class FileVisitorCountFiles {
+public class CountFiles {
 
 	static long count = 1;
 
