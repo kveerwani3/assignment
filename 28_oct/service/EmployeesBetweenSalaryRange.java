@@ -11,7 +11,7 @@ import java.util.Scanner;
 import com.yash.entities.Employees;
 import com.yash.helper.DBConnectionFactory;
 
-public class EmployeeDataByDeptId {
+public class EmployeesBetweenSalaryRange {
 
 	public static void main(String[] args) 
 	{
@@ -19,13 +19,20 @@ public class EmployeeDataByDeptId {
 		try(Connection con = DBConnectionFactory.getConnectionInstance();
 				Scanner sc = new Scanner(System.in);)
 		{
-			System.out.print("Enter Department id : ");
-			int deptId=0;
-			if(sc.hasNextInt()) {
-				deptId=sc.nextInt();
+			System.out.print("Enter Minimum salary : ");
+			double minSalary=0;
+			if(sc.hasNextDouble()) {
+				minSalary=sc.nextDouble();
 			}
-			PreparedStatement statement = con.prepareStatement("select * from employees where department_id=?");
-			statement.setInt(1, deptId);
+			System.out.print("Enter Maximum salary : ");
+			double maxSalary=0;
+			if(sc.hasNextDouble()) {
+				maxSalary=sc.nextDouble();
+			}
+			
+			PreparedStatement statement = con.prepareStatement("select * from employees where salary between ? and ?");
+			statement.setDouble(1, minSalary);
+			statement.setDouble(2, maxSalary);
 			ResultSet resultSet = statement.executeQuery();
 			while(resultSet.next()) {
 				Employees e = new Employees();
@@ -44,7 +51,10 @@ public class EmployeeDataByDeptId {
 			}
 			System.out.println("************** Employees List **************");
 			System.out.println();
-			empList.forEach(System.out::println);
+			empList.forEach(x->{
+				System.out.println("Employee Id : "+x.getEmployeeId()+"\tName : "+x.getFirstName()+" "+x.getLastName()
+				+"\t\tDept Id : "+x.getDepartmentId()+"\tSalary : "+x.getSalary());
+			});
 			System.out.println();
 			System.out.println("********************************************");
 			
@@ -52,4 +62,5 @@ public class EmployeeDataByDeptId {
 			e.printStackTrace();
 		}
 	}
+
 }

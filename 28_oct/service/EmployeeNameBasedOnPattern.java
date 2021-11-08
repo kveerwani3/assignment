@@ -11,21 +11,17 @@ import java.util.Scanner;
 import com.yash.entities.Employees;
 import com.yash.helper.DBConnectionFactory;
 
-public class EmployeeDataByDeptId {
+public class EmployeeNameBasedOnPattern {
 
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args) {
 		List<Employees> empList = new ArrayList<>();
 		try(Connection con = DBConnectionFactory.getConnectionInstance();
 				Scanner sc = new Scanner(System.in);)
 		{
-			System.out.print("Enter Department id : ");
-			int deptId=0;
-			if(sc.hasNextInt()) {
-				deptId=sc.nextInt();
-			}
-			PreparedStatement statement = con.prepareStatement("select * from employees where department_id=?");
-			statement.setInt(1, deptId);
+			System.out.print("Enter pattern : ");
+			String pattern = sc.next();
+			PreparedStatement statement = con.prepareStatement("select * from employees having first_name like ?");
+			statement.setString(1, pattern);
 			ResultSet resultSet = statement.executeQuery();
 			while(resultSet.next()) {
 				Employees e = new Employees();
@@ -44,12 +40,16 @@ public class EmployeeDataByDeptId {
 			}
 			System.out.println("************** Employees List **************");
 			System.out.println();
-			empList.forEach(System.out::println);
+			empList.forEach(x->{
+				System.out.println("Employee Id : "+x.getEmployeeId()+"\tName : "+x.getFirstName()+" "+x.getLastName()
+				+"\tDept Id : "+x.getDepartmentId()+"\tManager Id : "+x.getManagerId());
+			});
 			System.out.println();
 			System.out.println("********************************************");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
 }
